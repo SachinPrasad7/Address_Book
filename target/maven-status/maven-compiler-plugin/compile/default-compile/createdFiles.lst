@@ -1,8 +1,0 @@
-com\spring\mvc\controller\AddressBookController.class
-com\spring\mvc\model\AddNewContact.class
-com\spring\mvc\service\UserService.class
-com\spring\mvc\AddressBookProjectApplication.class
-com\spring\mvc\service\AddNewContactService.class
-com\spring\mvc\repository\UserRepository.class
-com\spring\mvc\repository\AddNewContactRepository.class
-com\spring\mvc\model\UserDetails.class
