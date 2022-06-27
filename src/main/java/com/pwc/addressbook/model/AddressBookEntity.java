@@ -15,8 +15,6 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "AddressBook")
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class AddressBookEntity {
 	
 	@Id
@@ -28,6 +26,16 @@ public class AddressBookEntity {
 	private String name;
 	@Column(name = "phone", nullable = false)
 	private String phone;
+	
+	
+	public AddressBookEntity(){}
+	public AddressBookEntity(Integer id, String userName, String name, String phone) {
+		super();
+		this.id = id;
+		this.userName = userName;
+		this.name = name;
+		this.phone = phone;
+	}
 	public Integer getId() {
 		return id;
 	}

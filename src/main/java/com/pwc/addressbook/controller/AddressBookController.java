@@ -74,7 +74,6 @@ public class AddressBookController {
 	@GetMapping("/validation")
 	public String validateUser(@ModelAttribute("userDetails") UserDetails userDetails, Model model) {
 		httpSession.setAttribute("userName", userDetails.getUserId());
-		// User Validation Logic
 		log.info(userDetails.toString());
 		String userName = (String) httpSession.getAttribute("userName");
 		model.addAttribute("userName", userName);

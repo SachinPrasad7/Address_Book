@@ -32,38 +32,39 @@ public class AddressBookServiceImpl implements AddressBookService {
 
 		AddressBookEntity existingContact = addressBookRepository
 				.findByNameAndUserName(addressBookEntity.getName(), addressBookEntity.getUserName()).orElse(null);
-		
+
 		if (existingContact == null) {
 			addressBookRepository.save(addressBookEntity);
 			log.info("Conatct Saved to DB!!");
 			return "Contact added successfully";
-		}
-
-		// existingContact.getUserName().equalsIgnoreCase("Other Address Book")
-		else
+		} else
 			throw new ContactAlreadyExistsException("Contact already exixts!!");
 	}
 
 	public AddressBookEntity searchAddress(String name) {
 
 		return addressBookRepository.findByName(name)
-				.orElseThrow(() -> new NoSuchContactExistsException("NO CONTACT PRESENT WITH ID = " + name));
+				.orElseThrow(() -> new NoSuchContactExistsException("NO CONTACT PRESENT WITH Name = " + name));
 	}
 
 	public void deleteContact(String name) {
 		if (name != null) {
 			addressBookRepository.deleteByName(name);
 			log.info("Conatct deleted from DB!!");
-		}
-		else throw new NoSuchContactExistsException("PLEASE ENTER VALID NAME = "+name);
+		} else
+			throw new NoSuchContactExistsException("PLEASE ENTER VALID NAME = " + name);
 	}
 
 	public List<AddressBookEntity> getOtherUser(String name) {
 		if (name != null) {
 			return addressBookRepository.findByUserName(name);
-		}
-		else throw new NoSuchContactExistsException("PLEASE ENTER VALID NAME = "+name);
-		
+		} else
+			throw new NoSuchContactExistsException("PLEASE ENTER VALID NAME = " + name);
+	}
+
+	public List<AddressBookEntity> findAll() {
+		log.info("Finding all Address Books!!");
+		return addressBookRepository.findAll();
 	}
 
 }
