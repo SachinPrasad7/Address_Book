@@ -24,7 +24,7 @@
 	<div class="container">
 		<table id="style2">
 			<tr>
-				<td><a href="HomePage" class="link3">Home Page</a></td>
+				<td><a href="homePage" class="link3">Home Page</a></td>
 				<td>
 					<h2>Contacts</h2>
 			</tr>
@@ -49,7 +49,7 @@
 						<td><a class="btn btn-info">Update</a></td>
 						<td><a class="btn btn-danger"
 							onclick="return confirm('Are you sure you want to delete?')"
-							href="/delete-person?name=${temp.name}">Delete</a></td>
+							href="/deleteContact?name=${temp.name}">Delete</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>

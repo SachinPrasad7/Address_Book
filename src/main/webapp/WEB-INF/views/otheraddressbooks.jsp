@@ -25,7 +25,7 @@
 	<div class="container">
 		<table id="style2">
 			<tr>
-				<td><a href="HomePage" class="link3">Home Page</a></td>
+				<td><a href="homePage" class="link3">Home Page</a></td>
 				<td>
 					<h2>Other Address Book</h2>
 			</tr>

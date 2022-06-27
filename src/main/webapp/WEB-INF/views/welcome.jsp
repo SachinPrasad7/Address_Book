@@ -10,8 +10,6 @@
 
 <title>Spring Boot</title>
 </head>
-
-
 <body>
 	<h1>Address Book Application</h1>
 
@@ -24,13 +22,12 @@
 		<caption>
 			<h3 style="margin-left: 35%;">Welcome ${userName} !!</h3>
 		</caption>
-		<a href="myaddress" class="link">My Address Book</a> <a href="addNew"
-			class="link">Add New Contacts</a> <a href="otheraddress" class="link">Other
-			Address Book</a> <br />
+		<a href="myAddress" class="link">My Address Book</a> 
+		<a href="addNewContacts" class="link">Add New Contacts</a> 
+		<a href="otherAddress" class="link">Other Address Book</a>
 		<br />
-		<br /> <a href="uniqueContacts" class="link4">List of friends that
-			are unique to Other Address Book</a>
-
+		<br />
+		<br /> <a href="uniqueContacts" class="link4">List of friends that are unique to Other Address Book</a>
 	</div>
 	</form>
 	</div>

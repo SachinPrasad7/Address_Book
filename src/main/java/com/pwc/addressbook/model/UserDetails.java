@@ -1,12 +1,17 @@
-package com.spring.mvc.model;
+package com.pwc.addressbook.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 @Entity
 @Table(name = "UserDetails")
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDetails {
 	@Id
 	@Column(name = "userId")

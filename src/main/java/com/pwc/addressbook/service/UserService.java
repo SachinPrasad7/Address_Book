@@ -1,4 +1,4 @@
-package com.spring.mvc.service;
+package com.pwc.addressbook.service;
 
 import org.springframework.stereotype.Service;
 

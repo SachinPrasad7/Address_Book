@@ -7,13 +7,13 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.3.2.RELEASE</version>
-		<relativePath /> <!-- lookup parent from repository -->
+		<relativePath />
 	</parent>
-	<groupId>com.spring.mvc</groupId>
-	<artifactId>Address_Book_Project</artifactId>
+	<groupId>com.pwc.addressbook</groupId>
+	<artifactId>address-book</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Address_Book_Project</name>
-	<description>Demo project for Spring Boot</description>
+	<name>Address book project</name>
+	<description>Demo Address book project</description>
 	<properties>
 
 		<maven.compiler.source>1.8</maven.compiler.source>

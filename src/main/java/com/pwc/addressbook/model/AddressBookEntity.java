@@ -1,4 +1,4 @@
-package com.spring.mvc.model;
+package com.pwc.addressbook.model;
 
 import java.util.Objects;
 
@@ -9,11 +9,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "AddressBook")
 @Data
-public class AddNewContact {
+@AllArgsConstructor
+@NoArgsConstructor
+public class AddressBookEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -64,7 +68,7 @@ public class AddNewContact {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		AddNewContact other = (AddNewContact) obj;
+		AddressBookEntity other = (AddressBookEntity) obj;
 		return Objects.equals(name, other.name);
 	}
 

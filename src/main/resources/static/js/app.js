@@ -1,7 +1,7 @@
-function validate() {
-	var name = document.getElementById("name").value;
-	if (name == '') {
-		alert('Please enter a valid name.');
+function validateUserName() {
+	var userId = document.getElementById("userId").value;
+	if (userId == '') {
+		alert('Please enter a valid User Name.');
 		return false;
 	} else {
 		return true;
@@ -9,20 +9,17 @@ function validate() {
 }
 
 function validateUserID() {
-	var name = document.getElementById("userId").value;
+	var regex =  /^\+?([0-9]{2})\)?\d{10}$/;
+	var name = document.getElementById("name").value;
+	var phone = document.getElementById("phone").value;
 	if (name == '') {
-		alert('Please Fill Valid User ID and Password.');
+		alert('Please enter a valid Name.');
 		return false;
-	} else {
+	}else if(!regex.test(phone)) {
+		alert('Please enter a valid Phone number with Country code');
+		return false;
+	}
+	else {
 		return true;
 	}
-}
-
-function AddNewContact()
-{
-window.transfer("AddNew.jsp");
-}
-
-function sample() {
-window.transfer("AddNew.jsp","_self"); 
 }

@@ -13,16 +13,14 @@
 </head>
 <body>
 	<h1>Address Book Application</h1>
-	<form action="validation" modelAttribute="userDetails"
-		onsubmit="return validateUserID()">
+	<form action="/validation" modelAttribute="userDetails" onsubmit="return validateUserName()">
 		<div class="container">
 			<div class="row">
 				<div class="col-10">
 					<label for="fname">Enter User Name:</label>
 				</div>
 				<div class="col-40">
-					<input type="text" id="userId" name="userId"
-						placeholder="User Name">
+					<input type="text" size="25" id="userId" name="userId" placeholder="User Name">
 				</div>
 				<br />
 				<div>
