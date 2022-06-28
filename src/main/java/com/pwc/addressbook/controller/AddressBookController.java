@@ -30,7 +30,6 @@ import com.pwc.addressbook.exception.ErrorResponse;
 import com.pwc.addressbook.model.AddressBookEntity;
 import com.pwc.addressbook.model.UserDetails;
 import com.pwc.addressbook.service.AddressBookServiceImpl;
-import com.pwc.addressbook.service.UserService;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,9 +40,6 @@ import lombok.extern.slf4j.Slf4j;
 public class AddressBookController {
 
 	private static final Logger log = LoggerFactory.getLogger(AddressBookController.class);
-
-	@Autowired
-	UserService userService;
 
 	@Autowired
 	AddressBookServiceImpl addressBookServiceImpl;
