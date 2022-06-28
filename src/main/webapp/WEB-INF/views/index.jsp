@@ -20,7 +20,7 @@
 					<label for="fname">Enter User Name:</label>
 				</div>
 				<div class="col-40">
-					<input type="text" size="25" id="userId" name="userId" placeholder="User Name">
+					<input type="text" size="25" id="userId" name="userId" placeholder="User Name" required>
 				</div>
 				<br />
 				<div>

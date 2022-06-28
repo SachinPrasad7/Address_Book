@@ -29,14 +29,14 @@
             <label for="fname">Enter Name:</label>
           </div>
            <div class="col-40"> 
-           <input type="text" id="name" size="25" name="name" placeholder="Enter Name">
+           <input type="text" id="name" size="25" name="name" placeholder="Enter Name" required>
            </div>
            <br />
            <div class="col-10">
             <label for="fname">Enter Phone Number:</label>
           </div>
            <div class="col-40"> 
-           <input type="text" id="phone" size="13" name="phone" placeholder="Enter Phone Number">
+           <input type="text" id="phone" size="13" name="phone" placeholder="Enter Phone Number" required>
            </div>
             <br />
             <div> 

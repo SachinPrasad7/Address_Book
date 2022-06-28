@@ -1,5 +1,6 @@
 package com.pwc.addressbook.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.Random;
@@ -65,6 +66,18 @@ public class AddressBookServiceImpl implements AddressBookService {
 	public List<AddressBookEntity> findAll() {
 		log.info("Finding all Address Books!!");
 		return addressBookRepository.findAll();
+	}
+
+	public List<AddressBookEntity> getUniqueContacts(String userName, String otherAddressBook) {
+		
+		List<AddressBookEntity> otherAddressDetails = addressBookRepository.findByUserName(otherAddressBook);		
+		List<AddressBookEntity> addressDetails = addressBookRepository.findByUserName(userName);
+		List<AddressBookEntity> lnt = new ArrayList<>();
+		List<AddressBookEntity> commonInBothList = new ArrayList<AddressBookEntity>();
+		commonInBothList.addAll(addressDetails);
+		commonInBothList.retainAll(otherAddressDetails);
+		
+		return commonInBothList;
 	}
 
 }

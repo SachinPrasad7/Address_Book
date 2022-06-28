@@ -83,7 +83,7 @@ public class AddressBookController {
 	@GetMapping("/addNewContacts")
 	public String addNewContacts(Model model) {
 
-		log.info("Redirecting to Add New Contacts page");
+		log.info("Add New Contacts page");
 		return "addnewcontacts";
 	}
 
@@ -119,7 +119,6 @@ public class AddressBookController {
 		String userName = (String) httpSession.getAttribute("userName");
 		List<AddressBookEntity> addressDetails = addressBookServiceImpl.getOtherUser(userName);
 		model.put("addressDetails", addressDetails);
-		addressDetails.stream().forEach(s -> log.info("loop" + s));
 		List<AddressBookEntity> otherAddressDetails = addressBookServiceImpl.getOtherUser("Other Address Book");
 		return "useraddressbook";
 	}
@@ -134,25 +133,16 @@ public class AddressBookController {
 	public String otherAddress(ModelMap model) {
 		List<AddressBookEntity> otherAddressDetails = addressBookServiceImpl.getOtherUser("Other Address Book");
 		model.put("otheraddressDetails", otherAddressDetails);
-
 		log.info("otheraddressDetails" + otherAddressDetails);
-
-		otherAddressDetails.stream().forEach(s -> log.info("otheraddressDetails" + s));
 		return "otheraddressbooks";
 	}
 
 	@GetMapping("/uniqueContacts")
 	public String uniqueContacts(ModelMap model) {
-		List<AddressBookEntity> otherAddressDetails = addressBookServiceImpl.getOtherUser("Other Address Book");
+
 		String userName = (String) httpSession.getAttribute("userName");
-		List<AddressBookEntity> addressDetails = addressBookServiceImpl.getOtherUser(userName);
-		List<AddressBookEntity> lnt = new ArrayList<>();
-		List<AddressBookEntity> finalList = new ArrayList<AddressBookEntity>();
-		finalList.addAll(addressDetails);
-		finalList.retainAll(otherAddressDetails);
-		List<AddressBookEntity> commonInBothList = finalList;
+		List<AddressBookEntity> commonInBothList = addressBookServiceImpl.getUniqueContacts(userName,"Other Address Book");
 		model.put("commonInBothList", commonInBothList);
-		commonInBothList.stream().forEach(s -> log.info("uniqueContacts" + s));
 		return "uniquecontacts";
 	}
 
